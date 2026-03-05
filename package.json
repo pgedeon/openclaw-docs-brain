@@ -1,0 +1,29 @@
+{
+  "name": "docs-brain",
+  "version": "0.1.0",
+  "description": "OpenClaw Docs Brain Plugin - Full-text search over documentation with tool-first access",
+  "main": "src/plugin.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "index": "node src/cli/index.js",
+    "query": "node src/cli/query.js"
+  },
+  "keywords": ["openclaw", "plugin", "docs", "search", "fts", "sqlite"],
+  "author": "OpenClaw Community",
+  "license": "MIT",
+  "openclaw": {
+    "extensions": ["./src/plugin.js"]
+  },
+  "peerDependencies": {
+    "openclaw": "^2026.3.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "zod": "^3.22.4",
+    "yaml": "^2.3.4",
+    "node-fetch": "^3.3.2",
+    "turndown": "^7.1.2",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

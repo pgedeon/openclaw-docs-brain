@@ -1,0 +1,5 @@
+*.md linguist-documentation
+*.json linguist-data
+*.js linguist-language=JavaScript
+*.mjs linguist-language=JavaScript
+package.json linguist-generated

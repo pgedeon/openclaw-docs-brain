@@ -1,0 +1,104 @@
+{
+  "id": "docs-brain",
+  "name": "Docs Brain",
+  "description": "Full-text search over documentation with tool-first access for coding agents",
+  "configSchema": {
+    "type": "object",
+    "required": [
+      "repoRoot",
+      "injectAgents"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "repoRoot": {
+        "type": "string",
+        "description": "Absolute workspace root path"
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "fts",
+          "hybrid",
+          "vector"
+        ],
+        "default": "fts"
+      },
+      "autoIndex": {
+        "type": "boolean",
+        "default": true
+      },
+      "autoInject": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "topK": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 6
+          },
+          "maxChars": {
+            "type": "integer",
+            "minimum": 500,
+            "default": 3500
+          }
+        }
+      },
+      "injectAgents": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Agent IDs allowed to receive docs-brain prompt guidance/injection"
+      },
+      "qdrant": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string",
+            "default": "http://127.0.0.1:6333"
+          },
+          "collection": {
+            "type": "string",
+            "default": "docs_brain"
+          }
+        }
+      },
+      "embeddings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "provider": {
+            "type": "string",
+            "default": "lmstudio-openai-compatible"
+          },
+          "baseUrl": {
+            "type": "string",
+            "default": "http://192.168.0.11:1234/v1"
+          },
+          "model": {
+            "type": "string",
+            "default": "text-embedding-nomic-embed-text-v1.5"
+          },
+          "apiKey": {
+            "type": "string",
+            "description": "API key for embeddings provider (if required)"
+          }
+        }
+      },
+      "vectorSize": {
+        "type": "integer",
+        "description": "Vector dimension for embeddings (e.g., 768 for nomic-embed-text-v1.5)",
+        "default": 768
+      },
+      "sourcesFile": {
+        "type": "string",
+        "default": ".openclaw/plugins/docs-brain/sources.yaml"
+      }
+    }
+  }
+}
