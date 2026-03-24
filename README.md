@@ -140,3 +140,7 @@ PRs welcome. Please add tests for new sources and update `sources.yaml` if appli
 ---
 
 *Made for OpenClaw. Optimized for hybrid retrieval, minimal friction, and running locally.*
+
+---
+
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-PayPal-blue)](https://www.paypal.com/donate/?business=petermgedeon%40gmail.com)
