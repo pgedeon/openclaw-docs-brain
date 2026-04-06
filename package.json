@@ -9,21 +9,31 @@
     "index": "node src/cli/index.js",
     "query": "node src/cli/query.js"
   },
-  "keywords": ["openclaw", "plugin", "docs", "search", "fts", "sqlite"],
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "docs",
+    "search",
+    "fts",
+    "sqlite"
+  ],
   "author": "OpenClaw Community",
   "license": "MIT",
   "openclaw": {
-    "extensions": ["./src/plugin.js"]
+    "extensions": [
+      "./src/plugin.js"
+    ]
   },
   "peerDependencies": {
     "openclaw": "^2026.3.0"
   },
   "dependencies": {
     "better-sqlite3": "^9.4.3",
-    "zod": "^3.22.4",
-    "yaml": "^2.3.4",
+    "cheerio": "^1.0.0-rc.12",
+    "fs-extra": "^11.3.4",
     "node-fetch": "^3.3.2",
     "turndown": "^7.1.2",
-    "cheerio": "^1.0.0-rc.12"
+    "yaml": "^2.3.4",
+    "zod": "^3.22.4"
   }
 }
